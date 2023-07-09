@@ -6,6 +6,7 @@ import Buttons from './components/button';
 import Sidebar from './components/sidebar';
 import Table from './components/table';
 import Modal from './components/modal.jsx';
+import FilterModal from './components/filterModal';
 
 function App() {
   const radioFilters = [
@@ -96,6 +97,14 @@ function App() {
     )
   }
 
+  const filterContent = () => {
+    return (
+      <div>
+        Filter Modal
+      </div>
+    )
+  }
+
   return (
     <div>
       <Sidebar open={open} setOpen={setOpen} name='Deneme'></Sidebar>
@@ -132,6 +141,7 @@ function App() {
 
                     </Table>
       <button onClick={() => setViewModal(true)}>Alert Modal</button>
+      <FilterModal filterContent={filterContent}></FilterModal>
       {
         viewModal &&
         <Modal
